@@ -31,10 +31,9 @@ public class giaodien extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<<<<<<< Updated upstream
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-=======
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+      
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -371,6 +370,7 @@ public class giaodien extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
+
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel10)
@@ -378,6 +378,8 @@ public class giaodien extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel9)
                         .addComponent(apphine_a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+
+               
                 .addGap(46, 46, 46)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(apphine_mahoa, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -405,11 +407,14 @@ public class giaodien extends javax.swing.JFrame {
                 vigene_mActionPerformed(evt);
             }
         });
+
         vigene_m.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 vigene_mKeyPressed(evt);
             }
         });
+
+
 
         vigene_keyword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -419,11 +424,13 @@ public class giaodien extends javax.swing.JFrame {
 
         vigene_mahoa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         vigene_mahoa.setText("Mã hoá");
+
         vigene_mahoa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 vigene_mahoaActionPerformed(evt);
             }
         });
+
 
         vigene_giaima.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         vigene_giaima.setText("Giải mã");
@@ -440,6 +447,7 @@ public class giaodien extends javax.swing.JFrame {
         vigene_banro.setRows(5);
         jScrollPane8.setViewportView(vigene_banro);
 
+
         lberror.setText("jLabel22");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -450,19 +458,30 @@ public class giaodien extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
+
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel14))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+
+                        
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel11))
                         .addGap(54, 54, 54))
                     .addGroup(jPanel4Layout.createSequentialGroup()
+
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(vigene_m, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                              
                         .addGap(71, 71, 71)
                         .addComponent(vigene_mahoa, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(vigene_giaima, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                              
                         .addGap(147, 147, 147))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel13)
@@ -476,6 +495,7 @@ public class giaodien extends javax.swing.JFrame {
                         .addGap(52, 52, 52)
                         .addComponent(lberror, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(257, 257, 257))))
+
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -493,8 +513,10 @@ public class giaodien extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
+                          
                     .addComponent(vigene_m, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lberror))
+                      
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
@@ -629,23 +651,21 @@ public class giaodien extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Hill", jPanel5);
 
->>>>>>> Stashed changes
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-<<<<<<< Updated upstream
-=======
+
     private void ceasar_keyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ceasar_keyActionPerformed
         // TODO add your handling code here:
         
@@ -685,6 +705,7 @@ public class giaodien extends javax.swing.JFrame {
 
     private void vigene_giaimaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vigene_giaimaActionPerformed
         // TODO add your handling code here:
+
         int mflag = 0, keyflag = 0;
         String errortext="";
         if(mflag == 1){
@@ -736,6 +757,7 @@ public class giaodien extends javax.swing.JFrame {
                 vigene_banro.setText(plaintext);
             }
         }
+      
     }//GEN-LAST:event_vigene_giaimaActionPerformed
 
     private void hill_giaimaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hill_giaimaActionPerformed
@@ -818,7 +840,6 @@ public class giaodien extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_vigene_mKeyPressed
 
->>>>>>> Stashed changes
     /**
      * @param args the command line arguments
      */
@@ -855,8 +876,7 @@ public class giaodien extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-<<<<<<< Updated upstream
-=======
+
     private javax.swing.JTextField apphine_a;
     private javax.swing.JTextField apphine_b;
     private javax.swing.JTextArea apphine_banma;
@@ -876,6 +896,7 @@ public class giaodien extends javax.swing.JFrame {
     private javax.swing.JTextField hill_d;
     private javax.swing.JButton hill_giaima;
     private javax.swing.JButton hill_mahoa;
+
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -890,6 +911,7 @@ public class giaodien extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+  
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -902,8 +924,10 @@ public class giaodien extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
+  
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -913,7 +937,9 @@ public class giaodien extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
+
     private javax.swing.JLabel lberror;
+
     private javax.swing.JTextArea subti_banma;
     private javax.swing.JTextArea subti_banro;
     private javax.swing.JButton subti_giaima;
@@ -925,6 +951,6 @@ public class giaodien extends javax.swing.JFrame {
     private javax.swing.JTextField vigene_keyword;
     private javax.swing.JTextField vigene_m;
     private javax.swing.JButton vigene_mahoa;
->>>>>>> Stashed changes
+  
     // End of variables declaration//GEN-END:variables
 }

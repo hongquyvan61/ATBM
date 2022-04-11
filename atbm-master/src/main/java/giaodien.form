@@ -23,16 +23,15 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
+          <Component id="jTabbedPane1" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
+          <Component id="jTabbedPane1" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
-<<<<<<< Updated upstream
   <SubComponents>
     <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
 
@@ -415,6 +414,7 @@
                           </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
+
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                               <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -424,6 +424,7 @@
                               <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="apphine_a" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
+
                       </Group>
                       <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -544,12 +545,15 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
+
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jScrollPane8" alignment="0" min="-2" pref="275" max="-2" attributes="0"/>
                                   <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
+
                               <EmptySpace max="32767" attributes="0"/>
+
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jScrollPane7" alignment="0" min="-2" pref="275" max="-2" attributes="0"/>
                                   <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -557,12 +561,15 @@
                               <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
+
+
                               <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
                               <Component id="vigene_mahoa" min="-2" pref="99" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="vigene_giaima" min="-2" pref="99" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="147" max="-2" attributes="0"/>
                           </Group>
+
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -577,6 +584,7 @@
                               <Component id="lberror" min="-2" pref="236" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="257" max="-2" attributes="0"/>
                           </Group>
+
                       </Group>
                   </Group>
               </Group>
@@ -601,6 +609,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="vigene_m" alignment="3" min="-2" max="-2" attributes="0"/>
+
                           <Component id="lberror" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -661,7 +670,9 @@
             <Component class="javax.swing.JTextField" name="vigene_m">
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="vigene_mActionPerformed"/>
+
                 <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="vigene_mKeyPressed"/>
+
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="vigene_keyword">
@@ -676,9 +687,11 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="M&#xe3; ho&#xe1;"/>
               </Properties>
+
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="vigene_mahoaActionPerformed"/>
               </Events>
+              
             </Component>
             <Component class="javax.swing.JButton" name="vigene_giaima">
               <Properties>
@@ -714,6 +727,7 @@
                 </Component>
               </SubComponents>
             </Container>
+
             <Component class="javax.swing.JLabel" name="lberror">
               <Properties>
                 <Property name="text" type="java.lang.String" value="jLabel22"/>
@@ -950,5 +964,5 @@
       </SubComponents>
     </Container>
   </SubComponents>
->>>>>>> Stashed changes
+
 </Form>
