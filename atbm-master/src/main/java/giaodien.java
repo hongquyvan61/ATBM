@@ -1,3 +1,7 @@
+
+import java.awt.Color;
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,6 +19,7 @@ public class giaodien extends javax.swing.JFrame {
      */
     public giaodien() {
         initComponents();
+        lberror.setVisible(false);
     }
 
     /**
@@ -26,6 +31,9 @@ public class giaodien extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+      
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -75,6 +83,7 @@ public class giaodien extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jScrollPane8 = new javax.swing.JScrollPane();
         vigene_banro = new javax.swing.JTextArea();
+        lberror = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -361,12 +370,16 @@ public class giaodien extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(apphine_a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel10)
-                        .addComponent(apphine_b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(apphine_b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel9)
+                        .addComponent(apphine_a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+
+               
                 .addGap(46, 46, 46)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(apphine_mahoa, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -395,6 +408,14 @@ public class giaodien extends javax.swing.JFrame {
             }
         });
 
+        vigene_m.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                vigene_mKeyPressed(evt);
+            }
+        });
+
+
+
         vigene_keyword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 vigene_keywordActionPerformed(evt);
@@ -403,6 +424,13 @@ public class giaodien extends javax.swing.JFrame {
 
         vigene_mahoa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         vigene_mahoa.setText("Mã hoá");
+
+        vigene_mahoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vigene_mahoaActionPerformed(evt);
+            }
+        });
+
 
         vigene_giaima.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         vigene_giaima.setText("Giải mã");
@@ -419,6 +447,9 @@ public class giaodien extends javax.swing.JFrame {
         vigene_banro.setRows(5);
         jScrollPane8.setViewportView(vigene_banro);
 
+
+        lberror.setText("jLabel22");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -427,30 +458,44 @@ public class giaodien extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(vigene_keyword, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
+
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel14))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+
+                        
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel11))
                         .addGap(54, 54, 54))
                     .addGroup(jPanel4Layout.createSequentialGroup()
+
                         .addComponent(jLabel12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(vigene_m, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
+                              
                         .addGap(71, 71, 71)
                         .addComponent(vigene_mahoa, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(vigene_giaima, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(147, 147, 147))))
+                              
+                        .addGap(147, 147, 147))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(vigene_keyword, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(vigene_m, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(52, 52, 52)
+                        .addComponent(lberror, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(257, 257, 257))))
+
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -468,7 +513,10 @@ public class giaodien extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
-                    .addComponent(vigene_m, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                          
+                    .addComponent(vigene_m, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lberror))
+                      
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
@@ -617,6 +665,7 @@ public class giaodien extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+
     private void ceasar_keyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ceasar_keyActionPerformed
         // TODO add your handling code here:
         
@@ -656,11 +705,140 @@ public class giaodien extends javax.swing.JFrame {
 
     private void vigene_giaimaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vigene_giaimaActionPerformed
         // TODO add your handling code here:
+
+        int mflag = 0, keyflag = 0;
+        String errortext="";
+        if(mflag == 1){
+            errortext += "Khoá m ";
+        }
+        if(keyflag == 1){
+            if(!errortext.isEmpty()) errortext += ",keyword ";
+            errortext += "Keyword ";
+        }
+        if(!errortext.isEmpty()){
+            JOptionPane.showMessageDialog(null,errortext + " bị trống, hãy nhập đủ thông tin cần thiết để giải mã!");
+            
+        }
+        if(vigene_banma.getText().equals("")){
+            JOptionPane.showMessageDialog(null,"Hiện không có bản mã, không thể giải mã!");
+        }
+        else{
+            String banma = vigene_banma.getText().trim();
+            String key = vigene_keyword.getText().trim();
+            int m = Integer.parseInt(vigene_m.getText());
+            String alphabet = "abcdefghijklmnopqrstuvwxyz";
+            int dem = 0;
+            String plaintext = "";
+            for(int i=0; i< banma.length();i++){
+                    if(dem == m){
+                            dem = 0;
+                    }
+                    if(dem<m){
+                            if(Character.isUpperCase(banma.charAt(i))){
+                                    int machar = banma.charAt(i) - 65;
+                                    int keychar = key.charAt(dem) - 65;
+                                    int c = (machar - keychar) + 26;
+                                    int last = c % 26;
+                                    plaintext += alphabet.charAt(last);
+                            }else{
+                                    int machar = banma.charAt(i) - 97;
+                                    int keychar = key.charAt(dem) - 97;
+                                    int c = (machar - keychar) + 26;
+                                    int last = c % 26;
+                                    plaintext += alphabet.charAt(last);
+                                    //plaintext+= machar + " "+ keychar + " " + c + " " + last + " " + "\n";
+                            }
+                            dem++;
+                    }
+
+            }
+            if(!plaintext.isEmpty()){
+                JOptionPane.showMessageDialog(null,"Giải mã thành công!");
+                vigene_banro.setText(plaintext);
+            }
+        }
+      
     }//GEN-LAST:event_vigene_giaimaActionPerformed
 
     private void hill_giaimaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hill_giaimaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_hill_giaimaActionPerformed
+
+    private void vigene_mahoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vigene_mahoaActionPerformed
+        // TODO add your handling code here:
+        String errortext="";
+        int banroflag = 0, mflag = 0, keyflag = 0;
+        if(vigene_banro.getText().equals("")){
+            banroflag = 1;
+        }
+        if(vigene_m.getText().equals("")){
+            mflag = 1;
+        }
+        if(vigene_keyword.getText().equals("")){
+            keyflag = 1;
+        }
+        if(banroflag == 1){
+            errortext += "Bản rõ ";
+        }
+        if(mflag == 1){
+            if(!errortext.isEmpty()) errortext += ",khoá m ";
+            errortext += "Khoá m ";
+        }
+        if(keyflag == 1){
+            if(!errortext.isEmpty()) errortext += ",keyword ";
+            errortext += "Keyword ";
+        }
+        if(!errortext.isEmpty()){
+            JOptionPane.showMessageDialog(null,errortext + " bị trống, hãy nhập đầy đủ thông tin!");
+            
+        }
+        else{
+            String banro = vigene_banro.getText().trim();
+            String key = vigene_keyword.getText().trim();
+            int m = Integer.parseInt(vigene_m.getText());
+            String alphabet = "abcdefghijklmnopqrstuvwxyz";
+            int dem = 0;
+            String mahoatext = "";
+            for(int i=0; i< banro.length();i++){
+                    if(dem == m){
+                            dem = 0;
+                    }
+                    if(dem<m){
+                            if(Character.isUpperCase(banro.charAt(i))){
+                                    int temp = banro.charAt(i)-65 + key.charAt(dem)-65;
+                                    int c = temp % 26;
+                                    mahoatext+= alphabet.charAt(c);
+                            }else{
+                                    int temp = banro.charAt(i)-97 + key.charAt(dem)-97;
+                                    int c = temp % 26;
+                                    mahoatext+= alphabet.charAt(c);
+                            }
+                            dem++;
+                    }
+
+
+            }
+            if(!mahoatext.isEmpty()){
+                JOptionPane.showMessageDialog(null,"Mã hoá thành công!");
+                vigene_banma.setText(mahoatext);
+            }
+        }
+    }//GEN-LAST:event_vigene_mahoaActionPerformed
+
+    private void vigene_mKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_vigene_mKeyPressed
+        // TODO add your handling code here:
+        Character c = evt.getKeyChar();
+        if(Character.isLetter(c)){
+            vigene_m.setEditable(false);
+            lberror.setVisible(true);
+            lberror.setText("Chỉ nhập số cho khoá m");
+            lberror.setForeground(Color.red);
+        }
+        else{
+            vigene_m.setEditable(true);
+            lberror.setVisible(false);
+        }
+    }//GEN-LAST:event_vigene_mKeyPressed
 
     /**
      * @param args the command line arguments
@@ -698,6 +876,7 @@ public class giaodien extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+
     private javax.swing.JTextField apphine_a;
     private javax.swing.JTextField apphine_b;
     private javax.swing.JTextArea apphine_banma;
@@ -717,8 +896,7 @@ public class giaodien extends javax.swing.JFrame {
     private javax.swing.JTextField hill_d;
     private javax.swing.JButton hill_giaima;
     private javax.swing.JButton hill_mahoa;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton9;
+
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -733,9 +911,7 @@ public class giaodien extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
+  
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -748,11 +924,10 @@ public class giaodien extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
+
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
-    private javax.swing.JScrollPane jScrollPane11;
-    private javax.swing.JScrollPane jScrollPane12;
+  
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -762,10 +937,9 @@ public class giaodien extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTextArea jTextArea11;
-    private javax.swing.JTextArea jTextArea12;
-    private javax.swing.JTextField jTextField11;
+
+    private javax.swing.JLabel lberror;
+
     private javax.swing.JTextArea subti_banma;
     private javax.swing.JTextArea subti_banro;
     private javax.swing.JButton subti_giaima;
@@ -777,5 +951,6 @@ public class giaodien extends javax.swing.JFrame {
     private javax.swing.JTextField vigene_keyword;
     private javax.swing.JTextField vigene_m;
     private javax.swing.JButton vigene_mahoa;
+  
     // End of variables declaration//GEN-END:variables
 }
