@@ -727,6 +727,7 @@ public class giaodien extends javax.swing.JFrame {
             String key = vigene_keyword.getText().trim();
             int m = Integer.parseInt(vigene_m.getText());
             String alphabet = "abcdefghijklmnopqrstuvwxyz";
+            int a = 1;
             int dem = 0;
             String plaintext = "";
             for(int i=0; i< banma.length();i++){
