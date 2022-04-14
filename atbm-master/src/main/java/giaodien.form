@@ -179,6 +179,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="M&#xe3; ho&#xe1;"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ceasar_mahoaActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="ceasar_giaima">
               <Properties>
@@ -281,6 +284,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="M&#xe3; ho&#xe1;"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="subti_mahoaActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="subti_giaima">
               <Properties>
@@ -935,6 +941,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="M&#xe3; ho&#xe1;"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="hill_mahoaActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="hill_giaima">
               <Properties>

@@ -127,6 +127,11 @@ public class giaodien extends javax.swing.JFrame {
 
         ceasar_mahoa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         ceasar_mahoa.setText("Mã hoá");
+        ceasar_mahoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ceasar_mahoaActionPerformed(evt);
+            }
+        });
 
         ceasar_giaima.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         ceasar_giaima.setText("Giải mã");
@@ -198,6 +203,11 @@ public class giaodien extends javax.swing.JFrame {
 
         subti_mahoa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         subti_mahoa.setText("Mã hoá");
+        subti_mahoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subti_mahoaActionPerformed(evt);
+            }
+        });
 
         subti_giaima.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         subti_giaima.setText("Giải mã");
@@ -540,6 +550,11 @@ public class giaodien extends javax.swing.JFrame {
 
         hill_mahoa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         hill_mahoa.setText("Mã hoá");
+        hill_mahoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hill_mahoaActionPerformed(evt);
+            }
+        });
 
         hill_giaima.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         hill_giaima.setText("Giải mã");
@@ -652,14 +667,23 @@ public class giaodien extends javax.swing.JFrame {
 
     private void ceasar_giaimaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ceasar_giaimaActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_ceasar_giaimaActionPerformed
 
     private void subti_keyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subti_keyActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_subti_keyActionPerformed
 
     private void subti_giaimaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subti_giaimaActionPerformed
         // TODO add your handling code here:
+        sub_cipher sc = new sub_cipher();
+        if("".equals(subti_banma.getText()) || "".equals(subti_key.getText())){
+            JOptionPane.showMessageDialog(null,"Chưa nhập bản mã hoặc khoá");
+        } else{
+        subti_banro.setText(sc.doDecryption(subti_banma.getText(), subti_key.getText()));
+        subti_banma.setText("");
+        }
     }//GEN-LAST:event_subti_giaimaActionPerformed
 
     private void apphine_aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apphine_aActionPerformed
@@ -789,6 +813,24 @@ public class giaodien extends javax.swing.JFrame {
 
     private void hill_giaimaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hill_giaimaActionPerformed
         // TODO add your handling code here:
+        hill_cipher hill = new hill_cipher();
+        String message = hill_banma.getText();
+        String key = hill_a.getText() + hill_b.getText() + hill_c.getText() + hill_d.getText();
+        int m = hill_banma.getText().length()/2;
+        if((hill_banma.getText().length())%2 > 0)
+            m++;
+        
+       
+        int [][]keyMatrix = new int[2][2];
+	hill.getKeyMatrix(key, keyMatrix);
+        int a = keyMatrix[0][0]*keyMatrix[1][1];
+        int b = keyMatrix[0][1]*keyMatrix[1][0];
+        int e = (a - b)%26;
+        if(hill.checkInv(e) != 0){
+        hill_banro.setText(hill.de_HillCipher(message, key, m));
+        hill_banma.setText("");
+        } else JOptionPane.showMessageDialog(null, "Khoá không khả nghịch");
+        
     }//GEN-LAST:event_hill_giaimaActionPerformed
 
     private void vigene_mahoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vigene_mahoaActionPerformed
@@ -902,6 +944,45 @@ public class giaodien extends javax.swing.JFrame {
                ma_hoa=String.copyValueOf(ban_ma); 
                apphine_banma.setText(ma_hoa);
     }//GEN-LAST:event_apphine_mahoaActionPerformed
+
+    private void ceasar_mahoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ceasar_mahoaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ceasar_mahoaActionPerformed
+
+    private void subti_mahoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subti_mahoaActionPerformed
+        // TODO add your handling code here:
+        sub_cipher sc = new sub_cipher();
+        if("".equals(subti_banro.getText()) || "".equals(subti_key.getText())){
+            JOptionPane.showMessageDialog(null,"Chưa nhập bản rõ hoặc khoá");
+        } else{
+        subti_banma.setText(sc.doEncryption(subti_banro.getText(), subti_key.getText()));
+        subti_banro.setText("");
+        }
+    }//GEN-LAST:event_subti_mahoaActionPerformed
+
+    private void hill_mahoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hill_mahoaActionPerformed
+        // TODO add your handling code here:
+        hill_cipher hill = new hill_cipher();
+        String message = hill_banro.getText();
+        String key = hill_a.getText() + hill_b.getText() + hill_c.getText() + hill_d.getText();
+        int m = hill_banro.getText().length()/2;
+        if((hill_banro.getText().length())%2 > 0)
+            m++;
+        
+       
+        int [][]keyMatrix = new int[2][2];
+	hill.getKeyMatrix(key, keyMatrix);
+        int a = keyMatrix[0][0]*keyMatrix[1][1];
+        int b = keyMatrix[0][1]*keyMatrix[1][0];
+        int e = (a - b)%26;
+        if(hill.checkInv(e) != 0){
+        hill_banma.setText(hill.HillCipher(message, key, m));
+        hill_banro.setText("");
+        } else JOptionPane.showMessageDialog(null, "Khoá không khả nghịch");
+       
+        
+        
+    }//GEN-LAST:event_hill_mahoaActionPerformed
 
     /**
      * @param args the command line arguments
