@@ -127,6 +127,11 @@ public class giaodien extends javax.swing.JFrame {
 
         ceasar_mahoa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         ceasar_mahoa.setText("Mã hoá");
+        ceasar_mahoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ceasar_mahoaActionPerformed(evt);
+            }
+        });
 
         ceasar_giaima.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         ceasar_giaima.setText("Giải mã");
@@ -198,6 +203,11 @@ public class giaodien extends javax.swing.JFrame {
 
         subti_mahoa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         subti_mahoa.setText("Mã hoá");
+        subti_mahoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subti_mahoaActionPerformed(evt);
+            }
+        });
 
         subti_giaima.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         subti_giaima.setText("Giải mã");
@@ -652,14 +662,23 @@ public class giaodien extends javax.swing.JFrame {
 
     private void ceasar_giaimaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ceasar_giaimaActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_ceasar_giaimaActionPerformed
 
     private void subti_keyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subti_keyActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_subti_keyActionPerformed
 
     private void subti_giaimaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subti_giaimaActionPerformed
         // TODO add your handling code here:
+        sub_cipher sc = new sub_cipher();
+        if("".equals(subti_banma.getText()) || "".equals(subti_key.getText())){
+            JOptionPane.showMessageDialog(null,"Chưa nhập bản mã hoặc khoá");
+        } else{
+        subti_banro.setText(sc.doDecryption(subti_banma.getText(), subti_key.getText()));
+        subti_banma.setText("");
+        }
     }//GEN-LAST:event_subti_giaimaActionPerformed
 
     private void apphine_aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apphine_aActionPerformed
@@ -902,6 +921,21 @@ public class giaodien extends javax.swing.JFrame {
                ma_hoa=String.copyValueOf(ban_ma); 
                apphine_banma.setText(ma_hoa);
     }//GEN-LAST:event_apphine_mahoaActionPerformed
+
+    private void ceasar_mahoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ceasar_mahoaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ceasar_mahoaActionPerformed
+
+    private void subti_mahoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subti_mahoaActionPerformed
+        // TODO add your handling code here:
+        sub_cipher sc = new sub_cipher();
+        if("".equals(subti_banro.getText()) || "".equals(subti_key.getText())){
+            JOptionPane.showMessageDialog(null,"Chưa nhập bản rõ hoặc khoá");
+        } else{
+        subti_banma.setText(sc.doEncryption(subti_banro.getText(), subti_key.getText()));
+        subti_banro.setText("");
+        }
+    }//GEN-LAST:event_subti_mahoaActionPerformed
 
     /**
      * @param args the command line arguments
