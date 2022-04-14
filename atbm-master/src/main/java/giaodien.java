@@ -692,6 +692,7 @@ public class giaodien extends javax.swing.JFrame {
 
     private void apphine_giaimaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apphine_giaimaActionPerformed
         // TODO add your handling code here:
+        
          if (apphine_banma.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "không được bỏ trống ban ma");
         }   
@@ -943,6 +944,7 @@ public class giaodien extends javax.swing.JFrame {
               
                ma_hoa=String.copyValueOf(ban_ma); 
                apphine_banma.setText(ma_hoa);
+               apphine_banro.setText("");
     }//GEN-LAST:event_apphine_mahoaActionPerformed
 
     private void ceasar_mahoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ceasar_mahoaActionPerformed
@@ -962,26 +964,47 @@ public class giaodien extends javax.swing.JFrame {
 
     private void hill_mahoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hill_mahoaActionPerformed
         // TODO add your handling code here:
-        hill_cipher hill = new hill_cipher();
-        String message = hill_banro.getText();
-        String key = hill_a.getText() + hill_b.getText() + hill_c.getText() + hill_d.getText();
-        int m = hill_banro.getText().length()/2;
-        if((hill_banro.getText().length())%2 > 0)
-            m++;
-        
-       
-        int [][]keyMatrix = new int[2][2];
-	hill.getKeyMatrix(key, keyMatrix);
-        int a = keyMatrix[0][0]*keyMatrix[1][1];
-        int b = keyMatrix[0][1]*keyMatrix[1][0];
-        int e = (a - b)%26;
-        if(hill.checkInv(e) != 0){
-        hill_banma.setText(hill.HillCipher(message, key, m));
-        hill_banro.setText("");
-        } else JOptionPane.showMessageDialog(null, "Khoá không khả nghịch");
-       
-        
-        
+        int errorkey = 0, errorbanro = 0, errordodaichuoi = 0;
+        if(hill_a.getText().isEmpty() || hill_b.getText().isEmpty() || hill_c.getText().isEmpty()
+                    || hill_d.getText().isEmpty()){
+            errorkey = 1;
+        }
+        if(hill_banro.getText().isEmpty()){
+            errorbanro = 1;
+        }
+        else{
+            if(hill_banro.getText().length() % 2 != 0){
+                errordodaichuoi = 1;
+            }
+        }
+        if(errorbanro == 1){
+            JOptionPane.showMessageDialog(null, "Hãy nhập bản rõ để bắt đầu giải mã!");
+        }
+        if(errorkey == 1){
+            JOptionPane.showMessageDialog(null, "Hãy nhập đầy đủ a,b,c,d cho ma trận khoá để giải mã!");
+        }
+        if(errordodaichuoi == 1){
+            JOptionPane.showMessageDialog(null, "Hãy nhập chuỗi bản rõ có độ dài chẵn!");
+        }
+        if(errorbanro == 0 && errorkey == 0 && errordodaichuoi == 0){
+            hill_cipher hill = new hill_cipher();
+                String message = hill_banro.getText();
+                String key = hill_a.getText() + hill_b.getText() + hill_c.getText() + hill_d.getText();
+                int m = hill_banro.getText().length()/2;
+                if((hill_banro.getText().length())%2 > 0)
+                    m++;
+
+
+                int [][]keyMatrix = new int[2][2];
+                hill.getKeyMatrix(key, keyMatrix);
+                int a = keyMatrix[0][0]*keyMatrix[1][1];
+                int b = keyMatrix[0][1]*keyMatrix[1][0];
+                int e = (a - b)%26;
+                if(hill.checkInv(e) != 0){
+                hill_banma.setText(hill.HillCipher(message, key, m));
+                hill_banro.setText("");
+                } else JOptionPane.showMessageDialog(null, "Khoá không khả nghịch");
+        }
     }//GEN-LAST:event_hill_mahoaActionPerformed
 
     /**
