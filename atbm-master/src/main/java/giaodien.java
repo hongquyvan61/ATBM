@@ -550,6 +550,11 @@ public class giaodien extends javax.swing.JFrame {
 
         hill_mahoa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         hill_mahoa.setText("Mã hoá");
+        hill_mahoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hill_mahoaActionPerformed(evt);
+            }
+        });
 
         hill_giaima.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         hill_giaima.setText("Giải mã");
@@ -808,6 +813,24 @@ public class giaodien extends javax.swing.JFrame {
 
     private void hill_giaimaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hill_giaimaActionPerformed
         // TODO add your handling code here:
+        hill_cipher hill = new hill_cipher();
+        String message = hill_banma.getText();
+        String key = hill_a.getText() + hill_b.getText() + hill_c.getText() + hill_d.getText();
+        int m = hill_banma.getText().length()/2;
+        if((hill_banma.getText().length())%2 > 0)
+            m++;
+        
+       
+        int [][]keyMatrix = new int[2][2];
+	hill.getKeyMatrix(key, keyMatrix);
+        int a = keyMatrix[0][0]*keyMatrix[1][1];
+        int b = keyMatrix[0][1]*keyMatrix[1][0];
+        int e = (a - b)%26;
+        if(hill.checkInv(e) != 0){
+        hill_banro.setText(hill.de_HillCipher(message, key, m));
+        hill_banma.setText("");
+        } else JOptionPane.showMessageDialog(null, "Khoá không khả nghịch");
+        
     }//GEN-LAST:event_hill_giaimaActionPerformed
 
     private void vigene_mahoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vigene_mahoaActionPerformed
@@ -936,6 +959,30 @@ public class giaodien extends javax.swing.JFrame {
         subti_banro.setText("");
         }
     }//GEN-LAST:event_subti_mahoaActionPerformed
+
+    private void hill_mahoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hill_mahoaActionPerformed
+        // TODO add your handling code here:
+        hill_cipher hill = new hill_cipher();
+        String message = hill_banro.getText();
+        String key = hill_a.getText() + hill_b.getText() + hill_c.getText() + hill_d.getText();
+        int m = hill_banro.getText().length()/2;
+        if((hill_banro.getText().length())%2 > 0)
+            m++;
+        
+       
+        int [][]keyMatrix = new int[2][2];
+	hill.getKeyMatrix(key, keyMatrix);
+        int a = keyMatrix[0][0]*keyMatrix[1][1];
+        int b = keyMatrix[0][1]*keyMatrix[1][0];
+        int e = (a - b)%26;
+        if(hill.checkInv(e) != 0){
+        hill_banma.setText(hill.HillCipher(message, key, m));
+        hill_banro.setText("");
+        } else JOptionPane.showMessageDialog(null, "Khoá không khả nghịch");
+       
+        
+        
+    }//GEN-LAST:event_hill_mahoaActionPerformed
 
     /**
      * @param args the command line arguments
