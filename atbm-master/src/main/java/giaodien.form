@@ -447,6 +447,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="M&#xe3; ho&#xe1;"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="apphine_mahoaActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="apphine_giaima">
               <Properties>
