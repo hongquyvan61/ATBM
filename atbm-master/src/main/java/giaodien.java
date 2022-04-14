@@ -666,7 +666,7 @@ public class giaodien extends javax.swing.JFrame {
     }//GEN-LAST:event_ceasar_keyActionPerformed
 
     private void ceasar_giaimaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ceasar_giaimaActionPerformed
-        // TODO add your handling code here:
+        if (ceasar_banma.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "không được bỏ trống ban ro");
         }   
          
