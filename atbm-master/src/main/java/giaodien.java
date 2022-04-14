@@ -667,6 +667,42 @@ public class giaodien extends javax.swing.JFrame {
 
     private void ceasar_giaimaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ceasar_giaimaActionPerformed
         // TODO add your handling code here:
+            JOptionPane.showMessageDialog(this, "không được bỏ trống ban ro");
+        }   
+         
+                else    if (ceasar_key.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "không được bỏ trống key");
+        }
+          char[] ban_ro=new char[100];
+          char[] ban_ma=new char[100];
+          String giai_ma;
+           String banma=ceasar_banma.getText();
+             int k= Integer.parseInt(ceasar_key.getText()); 
+           
+             for (int i = 0; i < banma.length(); i++) {
+                  ban_ma[i]=banma.charAt(i);
+                  }
+        for (int i = 0; i < banma.length(); i++)
+       {
+           char c = ban_ma[i];
+           if (c >= 'A' && c <= 'Z')
+           {
+               if ((ban_ma[i] - 'A' - k) < 0)
+                   ban_ro[i] = (char)((c - 'A' - k) + 26 + 'A');
+               else
+                   ban_ro[i] = (char)((c - 'A' - k) % 26 + 'A');
+           }
+           else if (c >= 'a' && c <= 'z')
+           {
+               if ((ban_ma[i] - 'a' - k) < 0)
+                   ban_ro[i] = (char)((c - 'a' - k) + 26 + 'a');
+               else
+                   ban_ro[i] = (char)((c - 'a' - k) % 26 + 'a');
+           }
+           else ban_ro[i] = ban_ma[i];
+       }
+          giai_ma=String.copyValueOf(ban_ro); 
+               ceasar_banro.setText(giai_ma);
         
     }//GEN-LAST:event_ceasar_giaimaActionPerformed
 
@@ -948,7 +984,36 @@ public class giaodien extends javax.swing.JFrame {
     }//GEN-LAST:event_apphine_mahoaActionPerformed
 
     private void ceasar_mahoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ceasar_mahoaActionPerformed
-        // TODO add your handling code here:
+           if (ceasar_banro.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "không được bỏ trống ban ro");
+        }   
+         
+                else    if (ceasar_key.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "không được bỏ trống key");
+        }
+          char[] ban_ro=new char[100];
+          char[] ban_ma=new char[100];
+          String ma_hoa;
+           String banro=ceasar_banro.getText();
+             int k= Integer.parseInt(ceasar_key.getText()); 
+           
+             for (int i = 0; i < banro.length(); i++) {
+                  ban_ro[i]=banro.charAt(i);
+                  }
+             
+       for (int i = 0; i < banro.length() ;i++)
+       {
+           char c = ban_ro[i];
+           if (c >= 'A' && c <= 'Z')
+               ban_ma[i] = (char)((c - 'A' + k) % 26 + 'A');
+           else if (c >= 'a' && c <= 'z')
+               ban_ma[i] = (char)((c - 'a' + k) % 26 + 'a');
+           else ban_ma[i] = ban_ro[i];
+       }
+          
+               ma_hoa=String.copyValueOf(ban_ma); 
+               ceasar_banma.setText(ma_hoa);
+     
     }//GEN-LAST:event_ceasar_mahoaActionPerformed
 
     private void subti_mahoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subti_mahoaActionPerformed
