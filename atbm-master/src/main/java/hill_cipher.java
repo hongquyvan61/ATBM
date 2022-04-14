@@ -10,8 +10,13 @@ public void getKeyMatrix(String key, int keyMatrix[][])
 	{
 		for (int j = 0; j < 2; j++)
 		{
-			keyMatrix[i][j] = (key.charAt(k)) % 65;
-			k++;
+                    if(Character.isUpperCase(key.charAt(k))){
+                        keyMatrix[i][j] = (key.charAt(k)) % 65;
+                    }
+                    else{
+                        keyMatrix[i][j] = (key.charAt(k)) % 97;
+                    }
+                    k++;
 		}
 	}
 }
@@ -50,11 +55,16 @@ public String HillCipher(String message, String key, int n)
 	// Generate vector for the message
 	for (int i = 0; i < n; i++)
             for(int j = 0; j < 2; j++){
-		messageVector[i][j] = (message.charAt(k)) % 65;
+                if(Character.isUpperCase(message.charAt(k))){
+                    messageVector[i][j] = (message.charAt(k)) % 65;
+                }
+                else{
+                    messageVector[i][j] = (message.charAt(k)) % 97;
+                }
                 if(k == message.length() - 1)
                     break;
                 else k++;
-                 }
+            }
 
 	int [][]cipherMatrix = new int[n][2];
 
@@ -66,9 +76,16 @@ public String HillCipher(String message, String key, int n)
 
 	// Generate the encrypted text from
 	// the encrypted vector
+        int c = 0;
 	for (int i = 0; i < n; i++)
-            for(int j = 0; j < 2; j++)
-		CipherText += (char)(cipherMatrix[i][j] + 65);
+            for(int j = 0; j < 2; j++){
+                if(Character.isUpperCase(message.charAt(c++))){
+                    CipherText += (char)(cipherMatrix[i][j] + 65);
+                }
+                else{
+                    CipherText += (char)(cipherMatrix[i][j] + 97);
+                }
+            }
 
 	// Finally print the ciphertext
 	return CipherText;
@@ -105,11 +122,16 @@ public String de_HillCipher(String message, String key, int n)
 	// Generate vector for the message
 	for (int i = 0; i < n; i++)
             for(int j = 0; j < 2; j++){
-		cipherMatrix[i][j] = (message.charAt(k)) % 65;
+                if(Character.isUpperCase(message.charAt(k))){
+                    cipherMatrix[i][j] = (message.charAt(k)) % 65;
+                }
+                else{
+                    cipherMatrix[i][j] = (message.charAt(k)) % 97;
+                }
                 if(k == message.length() - 1)
                     break;
                 else k++;
-                 }
+           }
 
 	int [][]messageVector = new int[n][2];
 
@@ -121,10 +143,16 @@ public String de_HillCipher(String message, String key, int n)
 
 	// Generate the encrypted text from
 	// the encrypted vector
+        int c = 0;
 	for (int i = 0; i < n; i++)
-            for(int j = 0; j < 2; j++)
-	Text += (char)(messageVector[i][j] + 65);
-
+            for(int j = 0; j < 2; j++){
+                if(Character.isUpperCase(message.charAt(c++))){
+                    Text += (char)(messageVector[i][j] + 65);
+                }
+                else{
+                    Text += (char)(messageVector[i][j] + 97);
+                }
+            }
 	// Finally print the ciphertext
 	return Text;
 }
