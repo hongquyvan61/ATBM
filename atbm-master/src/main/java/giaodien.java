@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  * @author Admin
  */
 public class giaodien extends javax.swing.JFrame {
-
+    private long pvkey;
     /**
      * Creates new form giaodien
      */
@@ -99,6 +99,20 @@ public class giaodien extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         hill_mahoa = new javax.swing.JButton();
         hill_giaima = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        rsa_banma = new javax.swing.JTextArea();
+        jLabel22 = new javax.swing.JLabel();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        rsa_banro = new javax.swing.JTextArea();
+        jLabel23 = new javax.swing.JLabel();
+        rsa_mahoa = new javax.swing.JButton();
+        rsa_giaima = new javax.swing.JButton();
+        jLabel24 = new javax.swing.JLabel();
+        rsa_inputp = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        rsa_inputq = new javax.swing.JTextField();
+        lbrsaerror = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -190,7 +204,7 @@ public class giaodien extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ceasar_mahoa, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ceasar_giaima, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addContainerGap(139, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Ceasar", jPanel1);
@@ -283,7 +297,7 @@ public class giaodien extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(subti_mahoa, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(subti_giaima, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(125, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Mã hoán vị", jPanel2);
@@ -393,7 +407,7 @@ public class giaodien extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(apphine_mahoa, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(apphine_giaima, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(125, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Affine", jPanel3);
@@ -460,33 +474,33 @@ public class giaodien extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel14))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel11))
-                        .addGap(54, 54, 54))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(71, 71, 71)
-                        .addComponent(vigene_mahoa, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(vigene_giaima, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(147, 147, 147))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(vigene_keyword, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(vigene_m, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(52, 52, 52)
-                        .addComponent(lberror, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(257, 257, 257))))
+                    .addComponent(lberror, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel4Layout.createSequentialGroup()
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel14))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel11))
+                            .addGap(54, 54, 54))
+                        .addGroup(jPanel4Layout.createSequentialGroup()
+                            .addGap(71, 71, 71)
+                            .addComponent(vigene_mahoa, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(vigene_giaima, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(147, 147, 147))
+                        .addGroup(jPanel4Layout.createSequentialGroup()
+                            .addComponent(jLabel13)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(vigene_keyword, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                            .addComponent(jLabel12)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(vigene_m, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(545, 545, 545)))))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -504,9 +518,10 @@ public class giaodien extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
-                    .addComponent(vigene_m, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lberror))
+                    .addComponent(vigene_m, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addComponent(lberror)
+                .addGap(27, 27, 27)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
                     .addComponent(vigene_keyword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -514,7 +529,7 @@ public class giaodien extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(vigene_mahoa, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(vigene_giaima, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Vigenere", jPanel4);
@@ -645,6 +660,136 @@ public class giaodien extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Hill", jPanel5);
 
+        rsa_banma.setColumns(20);
+        rsa_banma.setRows(5);
+        jScrollPane11.setViewportView(rsa_banma);
+
+        jLabel22.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel22.setText("Bản rõ:");
+
+        rsa_banro.setColumns(20);
+        rsa_banro.setRows(5);
+        rsa_banro.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                rsa_banroKeyPressed(evt);
+            }
+        });
+        jScrollPane12.setViewportView(rsa_banro);
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel23.setText("Bản mã:");
+
+        rsa_mahoa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        rsa_mahoa.setText("Mã hoá");
+        rsa_mahoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rsa_mahoaActionPerformed(evt);
+            }
+        });
+
+        rsa_giaima.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        rsa_giaima.setText("Giải mã");
+        rsa_giaima.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rsa_giaimaActionPerformed(evt);
+            }
+        });
+
+        jLabel24.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel24.setText("Nhập p:");
+
+        rsa_inputp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rsa_inputpActionPerformed(evt);
+            }
+        });
+        rsa_inputp.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                rsa_inputpKeyPressed(evt);
+            }
+        });
+
+        jLabel25.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel25.setText("Nhập q:");
+
+        rsa_inputq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rsa_inputqActionPerformed(evt);
+            }
+        });
+        rsa_inputq.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                rsa_inputqKeyPressed(evt);
+            }
+        });
+
+        lbrsaerror.setText("jLabel26");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(86, 86, 86)
+                .addComponent(rsa_mahoa, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(151, 151, 151)
+                .addComponent(rsa_giaima, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel22))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel23))
+                        .addGap(21, 21, 21))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(jLabel24)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(rsa_inputp, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(45, 45, 45)
+                                .addComponent(jLabel25)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(rsa_inputq, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lbrsaerror, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel23)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel22)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24)
+                    .addComponent(rsa_inputp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel25)
+                    .addComponent(rsa_inputq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addComponent(lbrsaerror)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rsa_mahoa, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rsa_giaima, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(69, 69, 69))
+        );
+
+        jTabbedPane1.addTab("RSA", jPanel6);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -653,7 +798,7 @@ public class giaodien extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -776,6 +921,7 @@ public class giaodien extends javax.swing.JFrame {
               
               String giai_ma=String.copyValueOf(ban_ro); 
                apphine_banro.setText(giai_ma);
+               apphine_banma.setText("");
     }//GEN-LAST:event_apphine_giaimaActionPerformed
 
     private void apphine_bActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apphine_bActionPerformed
@@ -811,9 +957,10 @@ public class giaodien extends javax.swing.JFrame {
         }
         else{
             String banma = vigene_banma.getText().trim();
-            String key = vigene_keyword.getText().trim();
+            String key = vigene_keyword.getText().trim();;
             int m = Integer.parseInt(vigene_m.getText());
             String alphabet = "abcdefghijklmnopqrstuvwxyz";
+            //String alphabethoa = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             int a = 1;
             int dem = 0;
             String plaintext = "";
@@ -823,17 +970,37 @@ public class giaodien extends javax.swing.JFrame {
                     }
                     if(dem<m){
                             if(Character.isUpperCase(banma.charAt(i))){
+                                if(key.equals(key.toUpperCase())){
                                     int machar = banma.charAt(i) - 65;
                                     int keychar = key.charAt(dem) - 65;
                                     int c = (machar - keychar) + 26;
                                     int last = c % 26;
-                                    plaintext += alphabet.charAt(last);
+                                    plaintext += Character.toUpperCase(alphabet.charAt(last));
+                                }
+                                else{
+                                    int machar = banma.charAt(i) - 65;
+                                    int keychar = Character.toUpperCase(key.charAt(dem)) - 65;
+                                    int c = (machar - keychar) + 26;
+                                    int last = c % 26;
+                                    plaintext += Character.toUpperCase(alphabet.charAt(last));
+                                }
+                                    
                             }else{
+                                if(key.equals(key.toUpperCase())){
+                                    int machar = banma.charAt(i) - 97;
+                                    int keychar = Character.toLowerCase(key.charAt(dem)) - 97;
+                                    int c = (machar - keychar) + 26;
+                                    int last = c % 26;
+                                    plaintext += alphabet.charAt(last);
+                                }
+                                else{
                                     int machar = banma.charAt(i) - 97;
                                     int keychar = key.charAt(dem) - 97;
                                     int c = (machar - keychar) + 26;
                                     int last = c % 26;
                                     plaintext += alphabet.charAt(last);
+                                }
+                                    
                                     //plaintext+= machar + " "+ keychar + " " + c + " " + last + " " + "\n";
                             }
                             dem++;
@@ -843,6 +1010,7 @@ public class giaodien extends javax.swing.JFrame {
             if(!plaintext.isEmpty()){
                 JOptionPane.showMessageDialog(null,"Giải mã thành công!");
                 vigene_banro.setText(plaintext);
+                vigene_banma.setText("");
             }
         }
       
@@ -903,7 +1071,7 @@ public class giaodien extends javax.swing.JFrame {
             String key = vigene_keyword.getText().trim();
             int m = Integer.parseInt(vigene_m.getText());
             String alphabet = "abcdefghijklmnopqrstuvwxyz";
-            String alphabet2 = "";
+            String alphabethoa = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             int dem = 0;
             String mahoatext = "";
             for(int i=0; i< banro.length();i++){
@@ -912,13 +1080,27 @@ public class giaodien extends javax.swing.JFrame {
                     }
                     if(dem<m){
                             if(Character.isUpperCase(banro.charAt(i))){
+                                if(key.equals(key.toUpperCase())){
                                     int temp = banro.charAt(i)-65 + key.charAt(dem)-65;
                                     int c = temp % 26;
-                                    mahoatext+= alphabet.charAt(c);
+                                    mahoatext+= Character.toUpperCase(alphabet.charAt(c));
+                                }
+                                else{
+                                    int temp = banro.charAt(i)-65 + Character.toUpperCase(key.charAt(dem))-65;
+                                    int c = temp % 26;
+                                    mahoatext+= Character.toUpperCase(alphabet.charAt(c));
+                                }    
                             }else{
+                                if(key.equals(key.toUpperCase())){
+                                    int temp = banro.charAt(i)-97 + Character.toLowerCase(key.charAt(dem)) -97;
+                                    int c = temp % 26;
+                                    mahoatext+= alphabet.charAt(c);
+                                }
+                                else{
                                     int temp = banro.charAt(i)-97 + key.charAt(dem)-97;
                                     int c = temp % 26;
                                     mahoatext+= alphabet.charAt(c);
+                                }
                             }
                             dem++;
                     }
@@ -928,6 +1110,7 @@ public class giaodien extends javax.swing.JFrame {
             if(!mahoatext.isEmpty()){
                 JOptionPane.showMessageDialog(null,"Mã hoá thành công!");
                 vigene_banma.setText(mahoatext);
+                vigene_banro.setText("");
             }
         }
     }//GEN-LAST:event_vigene_mahoaActionPerformed
@@ -1071,6 +1254,176 @@ public class giaodien extends javax.swing.JFrame {
                 } else JOptionPane.showMessageDialog(null, "Khoá không khả nghịch");
         }
     }//GEN-LAST:event_hill_mahoaActionPerformed
+    
+    private boolean nguyento(long n){
+        if(n<2) return false;
+	for(long i=2;i<=Math.sqrt(n);i++)
+	if(n%i==0) return false;
+	return true;
+    }
+    
+    private long UCLN(long a, long b){
+        while (a*b != 0){ 
+            if (a > b){
+                a %= b; // a = a % b
+            }else{
+                b %= a;
+            }
+        }
+        return a + b;
+    }
+    
+    private long BSCNN(long a, long b){
+        return a*b/ UCLN(a,b);
+    }
+    
+    private long modexp(long a, long x, long n){
+        long r=1;
+            while (x>0){
+                    if (x%2==1) 
+                    {
+                        r=(r*a)%n;
+                    }
+                    a=(a*a)%n;
+                    x/=2;
+            }
+        return r;
+    }
+    
+    private long modinverse(long key, long mod){
+        long flag;
+        for(long i=0; i<mod; i++){
+		flag = i*key % mod;
+		if(flag == 1){
+			return i;
+		}
+            }
+        return -1;
+    }
+    private void rsa_mahoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rsa_mahoaActionPerformed
+        // TODO add your handling code here:
+        if(rsa_banro.getText().isEmpty() || rsa_inputp.getText().isEmpty() || rsa_inputq.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Hãy nhập đầy đủ thông tin như bản rõ, p và q!");
+        }
+        else{
+            long input = Long.parseLong(rsa_banro.getText());
+            long inputp = Long.parseLong(rsa_inputp.getText());
+            long inputq = Long.parseLong(rsa_inputq.getText());
+            if(!nguyento(inputp)){
+                JOptionPane.showMessageDialog(null, "p không phải số nguyên tố, hãy nhập số nguyên tố!");
+            }
+            if(!nguyento(inputq)){
+                JOptionPane.showMessageDialog(null, "q không phải số nguyên tố, hãy nhập số nguyên tố!");
+            }
+            /*SINH KHOA*/
+            long n = -1,phi_n = -1,e = -1;
+            if(nguyento(inputp) && nguyento(inputq)){
+                n = inputp*inputq;
+                phi_n = BSCNN(inputp - 1,inputq - 1);
+                e = -1;
+                for(long i = 2;i < phi_n;i++){
+                    if(UCLN(i,phi_n) == 1){
+                        e = i;
+                        break;
+                    }
+                }
+                pvkey = modinverse(e, phi_n);
+            }
+            try{
+                long encryptnum = modexp(input,e,n);
+                rsa_banma.setText(String.valueOf(encryptnum));
+                rsa_banro.setText("");
+            }
+            catch(Exception ex){
+                JOptionPane.showMessageDialog(null, "Xảy ra lỗi, không mã hoá được!");
+            }
+        /*END SINH KHOA*/
+        }
+    }//GEN-LAST:event_rsa_mahoaActionPerformed
+
+    private void rsa_giaimaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rsa_giaimaActionPerformed
+        // TODO add your handling code here:
+        if(rsa_banma.getText().isEmpty() || rsa_inputp.getText().isEmpty() || rsa_inputq.getText().isEmpty()){
+            if(rsa_banma.getText().isEmpty()){
+                JOptionPane.showMessageDialog(null, "Bản mã trống, không thể giải mã!");
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "Hãy nhập đầy đủ thông tin như p,q!");
+            }
+        }
+        else{
+            long banma = Long.parseLong(rsa_banma.getText());
+            long inputp = Long.parseLong(rsa_inputp.getText());
+            long inputq = Long.parseLong(rsa_inputq.getText());
+            if(!nguyento(inputp)){
+                JOptionPane.showMessageDialog(null, "p không phải số nguyên tố, hãy nhập số nguyên tố!");
+            }
+            if(!nguyento(inputq)){
+                JOptionPane.showMessageDialog(null, "q không phải số nguyên tố, hãy nhập số nguyên tố!");
+            }
+            try{
+                long decryptnum = modexp(banma,pvkey,inputp*inputq);
+                rsa_banro.setText(String.valueOf(decryptnum));
+                rsa_banma.setText("");
+            }
+            catch(Exception ex){
+                JOptionPane.showMessageDialog(null, "Xảy ra lỗi, không giải mã được!");
+            }
+        }
+    }//GEN-LAST:event_rsa_giaimaActionPerformed
+
+    private void rsa_inputpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rsa_inputpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rsa_inputpActionPerformed
+
+    private void rsa_inputpKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rsa_inputpKeyPressed
+        // TODO add your handling code here:
+        Character c = evt.getKeyChar();
+        if(Character.isLetter(c)){
+            rsa_inputp.setEditable(false);
+            lbrsaerror.setVisible(true);
+            lbrsaerror.setText("Chỉ nhập số cho p");
+            lbrsaerror.setForeground(Color.red);
+        }
+        else{
+            rsa_inputp.setEditable(true);
+            lbrsaerror.setVisible(false);
+        }
+    }//GEN-LAST:event_rsa_inputpKeyPressed
+
+    private void rsa_inputqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rsa_inputqActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rsa_inputqActionPerformed
+
+    private void rsa_inputqKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rsa_inputqKeyPressed
+        // TODO add your handling code here:
+        Character c = evt.getKeyChar();
+        if(Character.isLetter(c)){
+            rsa_inputq.setEditable(false);
+            lbrsaerror.setVisible(true);
+            lbrsaerror.setText("Chỉ nhập số cho q");
+            lbrsaerror.setForeground(Color.red);
+        }
+        else{
+            rsa_inputq.setEditable(true);
+            lbrsaerror.setVisible(false);
+        }
+    }//GEN-LAST:event_rsa_inputqKeyPressed
+
+    private void rsa_banroKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rsa_banroKeyPressed
+        // TODO add your handling code here:
+        Character c = evt.getKeyChar();
+        if(Character.isLetter(c)){
+            rsa_banro.setEditable(false);
+            lbrsaerror.setVisible(true);
+            lbrsaerror.setText("Chỉ nhập số cho bản rõ");
+            lbrsaerror.setForeground(Color.red);
+        }
+        else{
+            rsa_banro.setEditable(true);
+            lbrsaerror.setVisible(false);
+        }
+    }//GEN-LAST:event_rsa_banroKeyPressed
 
     /**
      * @param args the command line arguments
@@ -1141,6 +1494,10 @@ public class giaodien extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1153,8 +1510,11 @@ public class giaodien extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -1165,6 +1525,13 @@ public class giaodien extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lberror;
+    private javax.swing.JLabel lbrsaerror;
+    private javax.swing.JTextArea rsa_banma;
+    private javax.swing.JTextArea rsa_banro;
+    private javax.swing.JButton rsa_giaima;
+    private javax.swing.JTextField rsa_inputp;
+    private javax.swing.JTextField rsa_inputq;
+    private javax.swing.JButton rsa_mahoa;
     private javax.swing.JTextArea subti_banma;
     private javax.swing.JTextArea subti_banro;
     private javax.swing.JButton subti_giaima;
