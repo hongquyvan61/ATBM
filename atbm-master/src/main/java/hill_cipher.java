@@ -3,7 +3,7 @@ public class hill_cipher {
     // Java code to implement Hill Cipher
 // Following function generates the
 // key matrix for the key string
-public void getKeyMatrix(String key, int keyMatrix[][])
+public int[][] getKeyMatrix(String key, int keyMatrix[][])
 {
 	int k = 0;
 	for (int i = 0; i < 2; i++)
@@ -19,6 +19,7 @@ public void getKeyMatrix(String key, int keyMatrix[][])
                     k++;
 		}
 	}
+        return keyMatrix;
 }
 
 // Following function encrypts the message
@@ -42,17 +43,12 @@ public void encrypt(int cipherMatrix[][],int keyMatrix[][],int messageVector[][]
 	}
 }
 
-// Function to implement Hill Cipher
-public String HillCipher(String message, String key, int n)
-{
-	// Get key matrix from the key string
-	int [][]keyMatrix = new int[2][2];
-	getKeyMatrix(key, keyMatrix);
 
+public String HillCipher(String message, int keyMatrix[][], int n)
+{
 	int [][]messageVector = new int[n][2];
          
         int k = 0;
-	// Generate vector for the message
 	for (int i = 0; i < n; i++)
             for(int j = 0; j < 2; j++){
                 if(Character.isUpperCase(message.charAt(k))){
@@ -67,15 +63,10 @@ public String HillCipher(String message, String key, int n)
             }
 
 	int [][]cipherMatrix = new int[n][2];
-
-	// Following function generates
-	// the encrypted vector
 	encrypt(cipherMatrix, keyMatrix, messageVector, n);
 
 	String CipherText="";
 
-	// Generate the encrypted text from
-	// the encrypted vector
         int c = 0;
 	for (int i = 0; i < n; i++)
             for(int j = 0; j < 2; j++){
@@ -86,8 +77,6 @@ public String HillCipher(String message, String key, int n)
                     CipherText += (char)(cipherMatrix[i][j] + 97);
                 }
             }
-
-	// Finally print the ciphertext
 	return CipherText;
 }
 public String de_HillCipher(String message, String key, int n)
@@ -158,13 +147,10 @@ public String de_HillCipher(String message, String key, int n)
 }
 public int checkInv(int a){
     int flag = 0;
-    int a_inv = 0;
+    int a_inv = -1;
     for (int i = 0; i < 26; i++)
         {
             flag = (a * i) % 26;
- 
-            // Check if (a*i)%26 == 1,
-            // then i will be the multiplicative inverse of a
             if (flag == 1)
             {
                 a_inv = i;
