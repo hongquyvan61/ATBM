@@ -15,19 +15,26 @@ import org.junit.jupiter.params.provider.CsvSource;
  * @author Admin
  */
 public class MahoaHillTestCase {
-    @ParameterizedTest
-    @CsvSource({"DPLE,HELP", "DPOF, HELP"})
-    public void testHillCipher(String expected, String message){
-        int keyMatrix[][] = {{3,3}, {2,5}};
-        hill_cipher obj = new hill_cipher();
-        int m = message.length()/2;
-        if((message.length())%2 > 0){
-           m++;
-        }
-        String actual = obj.HillCipher(message, keyMatrix, m);
+//    @ParameterizedTest
+//    @CsvSource({"DPLE,HELP", "DPOF, HELP"})
+//    public void testHillCipher(String expected, String message){
+//        int keyMatrix[][] = {{3,3}, {2,5}};
+//        hill_cipher obj = new hill_cipher();
+//        int m = message.length()/2;
+//        if((message.length())%2 > 0){
+//           m++;
+//        }
+//        String actual = obj.HillCipher(message, keyMatrix, m);
+//        Assertions.assertEquals(expected,actual);
+//    }
+    @Test
+    public void testluythuanhanh(){
+        long expected = 9;
+        long input1 = 112, input2 = 7, input3 = 221;
+        luythuanhanh obj = new luythuanhanh();
+        long actual = obj.modexp(input1, input2, input3);
         Assertions.assertEquals(expected,actual);
     }
-    
     @ParameterizedTest
     @CsvSource({"3,9", "3,4", "2,-1","2,5"})
     public void testCheckInv(int input, int expected){
