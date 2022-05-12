@@ -15,8 +15,8 @@ import javax.swing.JOptionPane;
  */
 public class giaodien extends javax.swing.JFrame {
     private long pvkey;
-    private long p;
-    private int a;
+    private long p,x,alpha,b;
+    private int a,k;
     private long a_gamal;
     private long alpha_gamal;
     private long k_gamal;
@@ -848,6 +848,11 @@ public class giaodien extends javax.swing.JFrame {
 
         btn_mahoa_elga.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btn_mahoa_elga.setText("Mã hoá");
+        btn_mahoa_elga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_mahoa_elgaActionPerformed(evt);
+            }
+        });
 
         jLabel35.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel35.setText("Bản mã:");
@@ -1610,8 +1615,8 @@ public class giaodien extends javax.swing.JFrame {
 
     private void btn_taokhoa_elgaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_taokhoa_elgaActionPerformed
         Random rand = new Random();
-           long alpha;
-           long b;       
+           
+                 
           
             if(txt_p_elga.getText().equals("") ){
                 JOptionPane.showMessageDialog(this, "không được bỏ trống p");
@@ -1630,20 +1635,15 @@ public class giaodien extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "không được bỏ trống alpha");
                 return;
            }
-            else if(txt_banro_elga.getText().equals("") ){
-                JOptionPane.showMessageDialog(this, "không được bỏ trống bản rõ");
-                return;
-           }
+           
            alpha=Integer.parseInt(txt_alpha_elga.getText());
-            long x=Integer.parseInt(txt_banro_elga.getText());
+          
               a = rand.nextInt((int)p-2)+1;
-             int k= rand.nextInt((int)p-2)+1;
+             k= rand.nextInt((int)p-2)+1;
            b= modexp(alpha,a,p);
              txt_khoacongkhai.setText(""+p+","+alpha+", "+b);
                txt_khoabimat.setText(""+a);
-             long y=modexp(alpha,(long)k,p);
-             long z=x*modexp(b,(long)k,p);
-            txt_banma_elga.setText(""+y+","+z);
+           
              
     }//GEN-LAST:event_btn_taokhoa_elgaActionPerformed
 
@@ -1652,10 +1652,22 @@ public class giaodien extends javax.swing.JFrame {
         String tam[]=banma.split(",");
         long y=Integer.parseInt(tam[0]);
         long z=Integer.parseInt(tam[1]);
-        long k=modexp(y,p-1-a,p);
         
-        txt_banro_elga.setText(""+(k*z)%p);
+         long l=modexp(y,p-1-a,p);
+        
+        txt_banro_elga.setText(""+(l*z)%p);
     }//GEN-LAST:event_btn_giaima_elgaActionPerformed
+
+    private void btn_mahoa_elgaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_mahoa_elgaActionPerformed
+        if(txt_banro_elga.getText().equals("") ){
+                JOptionPane.showMessageDialog(this, "không được bỏ trống bản rõ");
+                return;
+           }  
+           x=Integer.parseInt(txt_banro_elga.getText());
+        long y=modexp(alpha,(long)k,p);
+             long z=x*modexp(b,(long)k,p);
+            txt_banma_elga.setText(""+y+","+z);
+    }//GEN-LAST:event_btn_mahoa_elgaActionPerformed
 
     /**
      * @param args the command line arguments
